@@ -1,0 +1,39 @@
+{% extends 'home.html' %}
+
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block title %} Statistics {% endblock %}
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+      </head>
+    {% block body %}  <body style="background-image: url(https://htxt.co.za/wp-content/uploads/2015/11/CODBLOPS3_Header.jpg)" >{% endblock %}
+
+{% block content %}
+    {{ super() }}
+
+{% endblock %}
+
+{% block div %}
+        <div style="display: flex; align-items: center; justify-content: center; color: #f79702">
+            <h1><span class="badge bg-secondary">{{ session['username'] }}'s Stats</span></h1>
+        </div>
+
+
+        <div style="margin:auto;border: 1px solid #f79702; color:#f79702; width:height; height:500px; background: rgba(0, 0, 0, 0.6);">
+
+        <h1 style="text-align:center; opacity: 10">Kills: {{kills}}<br></h1>
+          <h1 style="text-align:center">Death: {{death}}<br></h1>
+          <h1 style="text-align:center">Asists: {{asist}}<br></h1>
+          <h1 style="text-align:center">KDA: {{kda}}<br></h1>
+          <h1 style="text-align:center">HeadShot: {{headsh}}<br></h1>
+          <h1 style="text-align:center">Score: {{scor}}</h1>
+      </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+{% endblock %}
+
+    </body>
+
+
+    </html>

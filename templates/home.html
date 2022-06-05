@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %} Home {% endblock %}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+{% block body %} <body style="background-image: url(https://wallpaper.dog/large/20505141.jpg)" > {% endblock %}
+
+{% block content %}
+        <div  class="text-bg-dark p-3">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-home-tab" onClick="location.href='{{url_for('home')}}'"  data-bs-toggle="pill" data-bs-target="#pills-home"  type="button" role="tab" aria-controls="pills-home" aria-selected="true"  >Home</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link"  data-bs-toggle="pill" onClick="location.href='{{url_for('stat')}}'" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Stats</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link"  data-bs-toggle="pill" onClick="location.href='{{url_for('gallery')}}'" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Gallery</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link"  data-bs-toggle="pill" onClick="location.href='{{url_for('plays')}}'" data-bs-target="#pills-contact"  type="button" role="tab" aria-controls="pills-contact" aria-selected="false" >Plays</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link"  data-bs-toggle="pill" onClick="location.href='{{url_for('login')}}'" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false" >Login</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                <button class="nav-link"  onClick="location.href='{{url_for('registration')}}'" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Registration</button>
+                </li>
+                {% if 'username' in session %}
+                <li class="nav-item" role="presentation">
+                <button class="nav-link"  onClick="location.href='/logout'" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Logout</button>
+                </li>
+                {% endif %}
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0"></div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0"></div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0"></div>
+                <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0"></div>
+              </div>
+          </div>
+{% endblock %}
+
+    <div>{% block div %}
+        <div style="display: flex; align-items: center; justify-content: center;">
+        <h1>Play For <span class="badge bg-secondary">Free</span></h1>
+      </div>
+
+      <div style="width: 400px; height:400px; position: relative; top:100px; margin:auto; padding:20px;" >
+
+
+        <div style="position: relative; right: 500px; bottom: 20px">
+
+            <div class="card">
+            <img src="https://images.hdqwalls.com/wallpapers/call-of-duty-warzone-2021-4k-5b.jpg" class="card-img-top" alt="...">
+
+            <div class="card-body">
+              <h5 class="card-title">New Season</h5>
+              <p class="card-text">New Weapon, New vechile, New hero and New map</p>
+              <a href="https://www.callofduty.com/warzone" class="btn btn-primary">MORE</a>
+            </div>
+
+            </div>
+
+        </div>
+
+        <div style="position: relative; right: 120px; bottom: 389px" >
+            <div class="card" >
+                    <img src="https://wallpapercave.com/wp/wp5857245.jpg" class="card-img-top" alt="...">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Captain Price</h5>
+                        <p class="card-text">Captain John Price, callsign Bravo Six, is a British special forces sniper</p>
+                        <a href="https://callofduty.fandom.com/wiki/John_Price" class="btn btn-primary">MORE</a>
+                     </div>
+
+            </div>
+        </div>
+
+
+        <div style="position: relative; right: -265px; bottom: 758px" >
+            <div class="card" >
+                    <img src="https://i.pinimg.com/originals/1c/0e/91/1c0e9140d1e4728d7e80e6e56a5b1684.jpg" class="card-img-top" alt="...">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Ghost</h5>
+                        <p class="card-text">Lieutenant Simon "Ghost" Riley is a British special forces operator.  </p>
+                        <a href="https://callofduty.fandom.com/wiki/Simon_%22Ghost%22_Riley" class="btn btn-primary">MORE</a>
+                     </div>
+
+            </div>
+        </div>
+
+       </div>
+   {% endblock %} </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+
+</html>

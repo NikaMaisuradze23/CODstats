@@ -1,0 +1,60 @@
+{% extends 'home.html' %}
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block title %} Login {% endblock %}
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+      </head>
+     {% block body %}  <body style="background-image: url(https://www.kolpaper.com/wp-content/uploads/2020/04/call-of-duty-warzone-hd-wallpaper.jpg)" > {% endblock %}
+
+{% block content %}
+    {{ super() }}
+{% endblock %}
+
+    <div>{% block div %}
+        <div style=" width:510px; height:320px; margin: auto; background-color:#212529">
+            <div style="width:510px; height:310px;  color: #efd346; font-size: 20px; font-weight: bold; background-color:#212529; padding: 10px">
+
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class="notification is-danger">
+                            {{ messages[0] }}
+                        </div>
+                    {% endif %}
+                    {% endwith %}
+
+                    <form method="post">
+                        <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Username</label>
+                        <input type="text" name="username"  placeholder="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" name="password" placeholder="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+        {% endblock %}</div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+      </body>
+    </html>
